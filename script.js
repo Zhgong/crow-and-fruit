@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '🍎': 4,
         '🍐': 4,
         '🍏': 4,
-        '🍑': 4 // 李子用桃子emoji替代，因为没有单独的李子emoji
+        '🍑': 4 // 李子用桃子emoji替代
     };
     const crowPosition = 5;
     let currentCrowPosition = crowPosition;
@@ -36,19 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(`${fruitType}-count`).textContent = 4;
         }
         currentCrowPosition = crowPosition;
-        crowElement.style.marginLeft = '0px';
+        crowElement.textContent = '';
         basketContent.textContent = '';
     };
 
     rollDiceButton.addEventListener('click', () => {
-        const diceFaces = ['🍎', '🍐', '🍏', '🍑', 'crow', 'basket'];
+        const diceFaces = ['🍎', '🍐', '🍏', '🍑', '🐦‍⬛', '🧺'];
         const diceRoll = Math.floor(Math.random() * diceFaces.length);
         const result = diceFaces[diceRoll];
         diceResultDisplay.textContent = result;
 
-        if (result === 'crow') {
+        if (result === '🐦‍⬛') {
             moveCrow();
-        } else if (result === 'basket') {
+        } else if (result === '🧺') {
             const availableFruits = Object.keys(fruits).filter(fruit => fruits[fruit] > 0);
             if (availableFruits.length > 0) {
                 const randomFruit = availableFruits[Math.floor(Math.random() * availableFruits.length)];
