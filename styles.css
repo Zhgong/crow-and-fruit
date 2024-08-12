@@ -14,21 +14,26 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
 }
 
 #trees {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-.tree {
-    width: 100px;
+.tree h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
 }
 
-.fruit-count {
-    font-size: 24px;
-    margin-top: 10px;
+.fruit-container {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
 }
 
 #crow-path {
@@ -37,17 +42,37 @@ body {
 
 #crow {
     width: 50px;
+    transition: margin-left 0.5s ease; /* 添加移动动画 */
 }
 
 #roll-dice {
     font-size: 18px;
     padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#roll-dice:hover {
+    background-color: #0056b3;
+}
+
+#dice-result {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 #basket {
-    margin-top: 20px;
+    font-size: 1.5em;
 }
 
 #basket-content {
-    font-size: 18px;
+    font-size: 1.5em;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
 }
