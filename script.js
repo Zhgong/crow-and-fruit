@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500); // 延迟提示，等待动画完成
         }
     };
+   
     
 
     const resetGame = () => {
