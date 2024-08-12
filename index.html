@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乌鸦与果园</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-board">
+        <div id="trees">
+            <div class="tree" id="red-apple-tree">
+                <h3>红苹果</h3>
+                <div class="fruit-count" id="red-apple-count">4</div>
+            </div>
+            <div class="tree" id="pear-tree">
+                <h3>梨</h3>
+                <div class="fruit-count" id="pear-count">4</div>
+            </div>
+            <div class="tree" id="green-apple-tree">
+                <h3>绿苹果</h3>
+                <div class="fruit-count" id="green-apple-count">4</div>
+            </div>
+            <div class="tree" id="plum-tree">
+                <h3>李子</h3>
+                <div class="fruit-count" id="plum-count">4</div>
+            </div>
+        </div>
+
+        <div id="crow-path">
+            <img src="assets/images/crow.png" id="crow" alt="乌鸦">
+        </div>
+
+        <button id="roll-dice">掷骰子</button>
+        <div id="dice-result"></div>
+
+        <div id="basket">
+            <h3>篮子</h3>
+            <div id="basket-content"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
