@@ -25,27 +25,40 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let fruitType in fruits) {
             fruitContainers[fruitType].innerHTML = ''; // 清空容器
             for (let i = 0; i < fruits[fruitType]; i++) {
-                fruitContainers[fruitType].innerHTML += fruitType;
+                const fruitElement = document.createElement('span');
+                fruitElement.textContent = fruitType;
+                fruitElement.classList.add('fruit'); // 给每个水果元素添加一个类
+                fruitContainers[fruitType].appendChild(fruitElement);
             }
         }
     };
+    
 
     const updateFruitCount = (fruitType) => {
         if (fruits[fruitType] > 0) {
             fruits[fruitType]--;
-            fruitContainers[fruitType].innerHTML = fruitContainers[fruitType].innerHTML.slice(0, -2); // 移除一个水果emoji
-            basketContent.textContent += `${fruitType} `;
+            const fruitElement = fruitContainers[fruitType].lastElementChild;
+            fruitElement.classList.add('fly-to-basket'); // 添加飞行动画
+            setTimeout(() => {
+                fruitContainers[fruitType].removeChild(fruitElement); // 动画完成后移除水果
+                basketContent.textContent += `${fruitType} `;
+            }, 500); // 等待动画完成后移除元素
         }
     };
+    
+    
 
     const moveCrow = () => {
         currentCrowPosition--;
-        crowElement.style.marginLeft = `${(crowPosition - currentCrowPosition) * 20}px`;
+        crowElement.style.transform = `translateX(${(crowPosition - currentCrowPosition) * 60}px)`; // 使用translateX进行平滑移动
         if (currentCrowPosition === 0) {
-            alert('乌鸦进入果园，乌鸦胜利！');
-            resetGame();
+            setTimeout(() => {
+                alert('乌鸦进入果园，乌鸦胜利！');
+                resetGame();
+            }, 500); // 延迟提示，等待动画完成
         }
     };
+    
 
     const resetGame = () => {
         for (let fruitType in fruits) {

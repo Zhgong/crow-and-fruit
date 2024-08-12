@@ -34,9 +34,18 @@ body {
 }
 
 .fruit-container {
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
+    position: relative;
+}
+
+.fruit {
+    display: inline-block;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* 添加移动和透明度变化的动画 */
+    position: relative;
+}
+
+.fruit.fly-to-basket {
+    transform: translateY(200px) translateX(50px); /* 根据实际位置调整这个值 */
+    opacity: 0;
 }
 
 #crow-path {
