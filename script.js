@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fruits = {
-        'red-apple': 4,
-        'pear': 4,
-        'green-apple': 4,
-        'plum': 4
+        '🍎': 4,
+        '🍐': 4,
+        '🍏': 4,
+        '🍑': 4 // 李子用桃子emoji替代，因为没有单独的李子emoji
     };
     const crowPosition = 5;
     let currentCrowPosition = crowPosition;
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     rollDiceButton.addEventListener('click', () => {
-        const diceFaces = ['red-apple', 'pear', 'green-apple', 'plum', 'crow', 'basket'];
+        const diceFaces = ['🍎', '🍐', '🍏', '🍑', 'crow', 'basket'];
         const diceRoll = Math.floor(Math.random() * diceFaces.length);
         const result = diceFaces[diceRoll];
         diceResultDisplay.textContent = result;
