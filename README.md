@@ -1,3 +1,4 @@
+
 # 乌鸦与果园游戏
 
 ## 项目概述
@@ -31,12 +32,19 @@ git clone https://github.com/your-username/your-repository-name.git
 
 ### 运行项目
 
-1. 打开项目文件夹，找到 `index.html` 文件。
-2. 用浏览器打开 `index.html` 文件，即可开始游戏。
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
 ### 游戏截图
 
-![](assets/images/crow-and-fruit.png)
+![](public/images/crow-and-fruit.png)
 
 ## 开发细节
 
@@ -59,4 +67,3 @@ git clone https://github.com/your-username/your-repository-name.git
 ## 许可证
 
 本项目采用 [MIT License](LICENSE)。
-
